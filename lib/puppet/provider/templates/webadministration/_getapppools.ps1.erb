@@ -41,7 +41,7 @@ Get-WebConfiguration -Filter '/system.applicationHost/applicationPools/add' | % 
     orphan_worker_process      = [string]$_.failure.orphanworkerprocess
     
     load_balancer_capabilities        = [string]$_.failure.loadbalancercapabilities
-    rapid_fail_protection             = [string]$_.failure.failure.rapidfailprotection
+    rapid_fail_protection             = [string]$_.failure.rapidfailprotection
     rapid_fail_protection_interval    = [string]$_.failure.rapidfailprotectioninterval
     rapid_fail_protection_max_crashes = [string]$_.failure.rapidfailprotectionmaxcrashes
     auto_shutdown_exe                 = [string]$_.failure.autoshutdownexe
