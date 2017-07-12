@@ -38,16 +38,16 @@ Get-WebConfiguration -Filter '/system.applicationHost/applicationPools/add' | % 
     
     orphan_action_exe          = [string]$_.failure.orphanactionexe
     orphan_action_params       = [string]$_.failure.orphanactionparams
-    orphan_worker_process      = [string]$_.failure.orphanworkerprocess
+    orphan_worker_process      = [string]$_.failure.orphanworkerprocess.ToString().ToLower()
     
     load_balancer_capabilities        = [string]$_.failure.loadbalancercapabilities
-    rapid_fail_protection             = [string]$_.failure.rapidfailprotection
+    rapid_fail_protection             = [string]$_.failure.rapidfailprotection.ToString().ToLower()
     rapid_fail_protection_interval    = [string]$_.failure.rapidfailprotectioninterval
     rapid_fail_protection_max_crashes = [string]$_.failure.rapidfailprotectionmaxcrashes
     auto_shutdown_exe                 = [string]$_.failure.autoshutdownexe
     auto_shutdown_params              = [string]$_.failure.autoshutdownparams
     
-    disallow_overlapping_rotation      = [string]$_.recycling.disallowoverlappingrotation
+    disallow_overlapping_rotation      = [string]$_.recycling.disallowoverlappingrotation.ToString().ToLower()
     disallow_rotation_on_config_change = [string]$_.recycling.disallowrotationonconfigchange
     log_event_on_recycle               = [string]$_.recycling.logeventonrecycle
     restart_memory_limit               = [string]$_.recycling.periodicRestart.memory
