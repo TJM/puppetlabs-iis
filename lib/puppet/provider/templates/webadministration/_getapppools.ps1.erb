@@ -48,7 +48,7 @@ Get-WebConfiguration -Filter '/system.applicationHost/applicationPools/add' | % 
     auto_shutdown_params              = [string]$_.failure.autoshutdownparams
     
     disallow_overlapping_rotation      = [string]$_.recycling.disallowoverlappingrotation.ToString().ToLower()
-    disallow_rotation_on_config_change = [string]$_.recycling.disallowrotationonconfigchange
+    disallow_rotation_on_config_change = [string]$_.recycling.disallowrotationonconfigchange.ToString().ToLower()
     log_event_on_recycle               = [string]$_.recycling.logeventonrecycle
     restart_memory_limit               = [string]$_.recycling.periodicRestart.memory
     restart_private_memory_limit       = [string]$_.recycling.periodicRestart.privateMemory
