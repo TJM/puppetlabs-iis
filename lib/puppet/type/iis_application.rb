@@ -15,6 +15,12 @@ Puppet::Type.newtype(:iis_application) do
           [:sitename],
           [:applicationname],
         ]
+      ],
+      [
+        /^([^\\]+)$/,
+        [
+          [:applicationname],
+        ]
       ]
     ]
   end
