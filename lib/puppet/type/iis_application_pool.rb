@@ -307,7 +307,12 @@ A value of '0' specifies that IIS runs the same number of worker processes as th
     newvalues('HttpLevel', 'TcpLevel')
   end
 
-  newproperty(:rapid_fail_protection, :parent => PuppetX::PuppetLabs::IIS::Property::String) do
+  newproperty(:rapid_fail_protection, :boolean => false ) do
+    newvalues(:true, :false)
+
+    munge do |value|
+      resource.munge_boolean(value)
+    end
   end
 
   newproperty(:rapid_fail_protection_interval, :parent => PuppetX::PuppetLabs::IIS::Property::TimeFormat) do
