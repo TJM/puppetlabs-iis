@@ -10,7 +10,7 @@ Puppet::Type.newtype(:iis_application) do
   def self.title_patterns
     [
       [
-        /^([^/]+)(/.+)$/,
+        /^([^\/]+)(\/.+)$/,
         [
           [:sitename],
           [:applicationname],
